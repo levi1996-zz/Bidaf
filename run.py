@@ -13,7 +13,7 @@ import evaluate
 
 
 def train(args, data):
-    device = torch.device(f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cpu")
     model = BiDAF(args, data.WORD.vocab.vectors).to(device)
 
     ema = EMA(args.exp_decay_rate)
