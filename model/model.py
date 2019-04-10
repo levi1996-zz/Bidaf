@@ -78,7 +78,7 @@ class BiDAF(nn.Module):
             """
             batch_size = x.size(0)
             # (batch, seq_len, word_len, char_dim)
-            x = self.dropout(self.char_emb(x)).to(self.device)
+            x = self.dropout(self.char_emb(x)).cpu()
             # (batch * seq_len, 1, char_dim, word_len)
             x = x.view(-1, self.args.char_dim, x.size(2)).unsqueeze(1)
             # (batch * seq_len, char_channel_size, 1, conv_len) -> (batch * seq_len, char_channel_size, conv_len)
