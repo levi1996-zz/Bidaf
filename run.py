@@ -70,7 +70,8 @@ def train(args, data):
 
             loss = 0
             model.train()
-
+    best_model = copy.deepcopy(model)
+    print('WTF')
     writer.close()
     print(f'max dev EM: {max_dev_exact:.3f} / max dev F1: {max_dev_f1:.3f}')
 
