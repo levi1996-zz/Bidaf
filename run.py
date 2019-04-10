@@ -131,7 +131,7 @@ def main():
     parser.add_argument('--dropout', default=0.2, type=float)
     parser.add_argument('--epoch', default=12, type=int)
     parser.add_argument('--exp-decay-rate', default=0.999, type=float)
-    parser.add_argument('--gpu', default=0, type=int)
+    parser.add_argument('--gpu', default=1, type=int)
     parser.add_argument('--hidden-size', default=100, type=int)
     parser.add_argument('--learning-rate', default=0.5, type=float)
     parser.add_argument('--print-freq', default=250, type=int)
