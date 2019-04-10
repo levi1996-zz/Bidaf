@@ -26,6 +26,7 @@ class SQuAD():
             self.preprocess_file(f'{path}/{args.dev_file}')
 
         self.RAW = data.RawField()
+        
         self.CHAR_NESTING = data.Field(batch_first=True, tokenize=list, lower=True)
         self.CHAR = data.NestedField(self.CHAR_NESTING, tokenize=word_tokenize)
         self.WORD = data.Field(batch_first=True, tokenize=word_tokenize, lower=True, include_lengths=True)
