@@ -76,6 +76,7 @@ class BiDAF(nn.Module):
             :param x: (batch, seq_len, word_len)
             :return: (batch, seq_len, char_channel_size)
             """
+            print('X0:',x.size() )
             batch_size = x.size(0)
             print(batch_size)
             # (batch, seq_len, word_len, char_dim)
