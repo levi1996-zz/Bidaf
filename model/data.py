@@ -70,7 +70,7 @@ class SQuAD():
 
         print("building vocab...")
         self.CHAR.build_vocab(self.train, self.dev)
-        self.WORD.build_vocab(self.train, self.dev, vectors=FastText(language='en'))
+        self.WORD.build_vocab(self.train, self.dev, vectors=FastText(language='ja'))
 
         print("building iterators...")
         self.train_iter, self.dev_iter = \
