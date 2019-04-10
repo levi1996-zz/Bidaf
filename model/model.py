@@ -78,7 +78,7 @@ class BiDAF(nn.Module):
             """
             batch_size = x.size(0)
             # (batch, seq_len, word_len, char_dim)
-            x = self.dropout(self.char_emb(x))
+            x = self.dropout(self.char_emb(x)).to(self.device)
             # (batch * seq_len, 1, char_dim, word_len)
             x = x.view(-1, self.args.char_dim, x.size(2)).unsqueeze(1)
             # (batch * seq_len, char_channel_size, 1, conv_len) -> (batch * seq_len, char_channel_size, conv_len)
@@ -169,8 +169,8 @@ class BiDAF(nn.Module):
             return p1, p2
 
         # 1. Character Embedding Layer
-        c_char = char_emb_layer(batch.c_char)
-        q_char = char_emb_layer(batch.q_char)
+        c_char = char_emb_layer(batch.c_char).cpu()
+        q_char = char_emb_layer(batch.q_char).cpu()
         # 2. Word Embedding Layer
         c_word = self.word_emb(batch.c_word[0])
         q_word = self.word_emb(batch.q_word[0])
