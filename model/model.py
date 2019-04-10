@@ -14,7 +14,7 @@ class BiDAF(nn.Module):
         self.char_emb = nn.Embedding(args.char_vocab_size, args.char_dim, padding_idx=1)
         nn.init.uniform_(self.char_emb.weight, -0.001, 0.001)
 
-        self.char_conv = nn.Conv2d(1, args.char_channel_size, (args.char_dim, args.char_channel_width), padding='same')
+        self.char_conv = nn.Conv2d(1, args.char_channel_size, (args.char_dim, args.char_channel_width), padding=(1,1))
 
         # 2. Word Embedding Layer
         # initialize word embedding with GloVe
