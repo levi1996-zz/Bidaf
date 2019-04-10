@@ -6,10 +6,11 @@ import torch
 from torchtext import data
 from torchtext import datasets
 from torchtext.vocab import FastText
+from tinysegmenter import tokenize
 
 
 def word_tokenize(tokens):
-    return [token.replace("''", '"').replace("``", '"') for token in tokens]#nltk.word_tokenize(tokens)]
+    return [token.replace("''", '"').replace("``", '"') for token in tokenize(tokens)]#nltk.word_tokenize(tokens)]
 
 
 class SQuAD():
