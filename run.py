@@ -39,7 +39,7 @@ def train(args, data):
             print('epoch:', present_epoch + 1)
         last_epoch = present_epoch
 
-        p1, p2 = model(batch).cpu()
+        p1, p2 = model(batch)
 
         optimizer.zero_grad()
         batch_loss = criterion(p1, batch.s_idx) + criterion(p2, batch.e_idx)
