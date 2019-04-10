@@ -137,7 +137,7 @@ def main():
     parser.add_argument('--print-freq', default=250, type=int)
     parser.add_argument('--train-batch-size', default=8, type=int)
     parser.add_argument('--train-file', default='train_data_para_whole.json')
-    parser.add_argument('--word-dim', default=100, type=int)
+    parser.add_argument('--word-dim', default=300, type=int)
     args = parser.parse_args()
 
     print('loading SQuAD data...')
