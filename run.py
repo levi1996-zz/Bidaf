@@ -123,7 +123,7 @@ def test(model, ema, args, data):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--char-dim', default=8, type=int)
-    parser.add_argument('--char-channel-width', default=5, type=int)
+    parser.add_argument('--char-channel-width', default=1, type=int)
     parser.add_argument('--char-channel-size', default=100, type=int)
     parser.add_argument('--context-threshold', default=600, type=int)
     parser.add_argument('--dev-batch-size', default=8, type=int)
