@@ -9,7 +9,7 @@ from torchtext.vocab import FastText
 
 
 def word_tokenize(tokens):
-    return [token.replace("''", '"').replace("``", '"') for token in nltk.word_tokenize(tokens)]
+    return [token.replace("''", '"').replace("``", '"') for token in tokens]#nltk.word_tokenize(tokens)]
 
 
 class SQuAD():
