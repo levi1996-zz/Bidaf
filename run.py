@@ -62,10 +62,11 @@ def train(args, data):
             print(f'train loss: {loss:.3f} / dev loss: {dev_loss:.3f}'
                   f' / dev EM: {dev_exact:.3f} / dev F1: {dev_f1:.3f}')
 
-            if dev_f1 > max_dev_f1:
-                max_dev_f1 = dev_f1
-                max_dev_exact = dev_exact
-                best_model = copy.deepcopy(model)
+            # if dev_f1 > max_dev_f1:
+            #     max_dev_f1 = dev_f1
+            #     max_dev_exact = dev_exact
+            #     best_model = copy.deepcopy(model)
+            best_model = copy.deepcopy(model)
 
             loss = 0
             model.train()
